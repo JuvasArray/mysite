@@ -38,11 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My apls
+    'home.apps.HomeConfig',
     'blog.apps.BlogConfig',
     'accounts.apps.AccountsConfig',
-
-
+    'contact.apps.ContactConfig',
+    
     'django.contrib.admin',
+
+    # Third party 
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +64,7 @@ ROOT_URLCONF = 'website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
