@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==2.1"
+django-taggit = "==0.23.0"
+pillow = "==5.2.0"
+pytz = "==2018.5"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
