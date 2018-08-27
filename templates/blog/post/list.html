@@ -1,20 +1,24 @@
-{% extends "blog/base.html" %}
-{% load blog_tags %}
+{% extends "base.html" %}
+
+
+{% load blog_tags %} 
+
+
+{% block title %}My Blog{% endblock %} 
 
 
 
 
 
-{% block title %}My Blog{% endblock %}
- 
 {% block content %}
+<div class="container">
 
-
+	<div class="row">
+		<div class="col">
   <h1>My Blog</h1>
   {% if tag %}
     <h2>Posts tagged with "{{ tag.name }}"</h2>
   {% endif %}
-
   {% for post in posts %}
     <h2>
       <a href="{{ post.get_absolute_url }}">
@@ -26,10 +30,9 @@
     </p>
     {{ post.body|truncatewords:30|linebreaks }}
   {% endfor %}
-
-	<h3>My blog</h3>
-		<p>This is my blog. I've written {% total_posts %} posts so far.</p>  </div>
-	  <h3>Latest posts</h3>  
-		{% show_latest_posts 3 %}
   {% include "blog/pagination.html" with page=posts %}
-{% endblock %}
+		</div>
+	</div>
+</div>
+	
+{% endblock content  %}

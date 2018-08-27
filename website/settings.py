@@ -31,18 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # My apps
+    'blog.apps.BlogConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # My apls
-    'home.apps.HomeConfig',
-    'blog.apps.BlogConfig',
-    'accounts.apps.AccountsConfig',
-    'contact.apps.ContactConfig',
-    
+    'django.contrib.postgres',
     'django.contrib.admin',
 
     # Third party 
@@ -135,11 +131,15 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
+STATICFILES_DIRS = [                                                                                      os.path.join(BASE_DIR, "static"),
+    # '/var/www/static/',
+    ]
 
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media_cdn')
 
 # For authentication
 LOGIN_REDIRECT_URL = 'dashboard'
@@ -149,3 +149,8 @@ LOGOUT_URL = 'logout'
 
 # Email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST	=	'smtp.gmail.com'
+EMAIL_HOST_USER	=	'your_account@gmail.com'
+EMAIL_HOST_PASSWORD	=	'your_password'
+EMAIL_PORT	=	587
+EMAIL_USE_TLS	=	True

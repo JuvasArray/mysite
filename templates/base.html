@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static "css/mdb.min.css" %}" rel="stylesheet">
+
+  <title>{% block head_title %}Juvas Id{% endblock head_title %}</title>
+
+  {% block head_extra %} {% endblock head_extra %}
+</head>
+
+<body>
+
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+        <!-- Brand --><a class="navbar-brand waves-effect">
+		<strong class="blue-text">Juvas</strong>
+                </a>
+		<!-- Collapse -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto text-center">
+		  <li class="nav-item active"> 
+			  <a class="nav-link waves-effect" href="#">Home
+				  <span class="sr-only">(current)</span>
+			  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#">About me</a> </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#">Blog</a> </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="#">Contact</a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+
+
+
+      {% block content %}
+      	
+      {% endblock content %}
+
+
+      <!--Footer-->                                                                                         <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+        <!--Call to action-->                                                                                 <div class="pt-4">
+            <a class="btn btn-outline-white" href="#" target="_blank" role="button">Hire me
+                <i class="fa fa-github ml-2"></i>
+            </a>
+	</div>
+	<hr class="my-4">
+        <div class="pb-4">
+            <a href="#" target="_blank">
+                <i class="fa fa-facebook mr-3"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fa fa-twitter mr-3"></i>
+            </a>
+	    <a href="" target="_blank">
+		    <i class="fa fa-codepen mr-3"></i>
+            </a>
+        </div>                                                                                                <!-- Social icons -->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+            © 2018 Copyright:
+            <a href="#" target="_blank">Juvas</a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static "js/popper.min.js" %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static "js/mdb.min.js" %}"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
+
+</body>
+
+</html>
